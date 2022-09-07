@@ -1,0 +1,8 @@
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL .Page.Params.endpoint }}
+
+{{ range getJSON $contentURL }}
+<div>
+    <p>{{ .id }}</p>
+    <p>{{ .attributes }}</p>
+</div>
+{{end}}

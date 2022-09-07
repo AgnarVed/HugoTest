@@ -1,0 +1,11 @@
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/equipments?populate=*" }}
+{{ $equipments := getJSON $contentURL }}
+{{ range $equipments.data }}
+<div>
+    <p>{{ .attributes.name }}</p>
+    {{ $url := printf "%s%s" "http://localhost:1337" .attributes.equip_photo.data.attributes.url}}
+    <img src="{{$url}}">
+    <p>{{ .attributes.description }}</p>
+    <br/>
+</div>
+{{end}}

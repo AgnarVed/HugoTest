@@ -1,0 +1,13 @@
+<!-- Partial to fetch content from Strapi. -->
+
+{{ $endpoint := $.Param "endpoint" }}
+{{ $data := dict "title" "" "content" "" }}
+
+{{ if and $endpoint .Site.Params.StrapiServerURL }}
+
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL $endpoint }}
+{{ $data = getJSON $contentURL }}
+
+{{ end }}
+
+{{ return $data }}

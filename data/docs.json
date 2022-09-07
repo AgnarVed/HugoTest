@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": 1,
+    "attributes": {
+      "title": "AboutTitle",
+      "content": "This is About Content",
+      "createdAt": "2022-09-01T04:46:40.612Z",
+      "updatedAt": "2022-09-01T04:46:42.150Z",
+      "publishedAt": "2022-09-01T04:46:42.149Z"
+    }
+  },
+  "meta": {}
+}

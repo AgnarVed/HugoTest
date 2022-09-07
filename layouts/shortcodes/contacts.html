@@ -1,0 +1,9 @@
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/contact/" }}
+{{ $rules := getJSON $contentURL }}
+{{ range $rules }}
+<div>
+    <p>{{ .attributes.Address }}</p>
+    <p>{{ .attributes.email }}</p>
+    <p>{{ .attributes.vk_url }}</p>
+</div>
+{{end}}

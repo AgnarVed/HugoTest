@@ -1,0 +1,6 @@
+{{ $strapiData := partial "strapi-content" . }}
+<article class="markdown">
+    <h1>{{ $strapiData.title }}</h1>
+
+    {{ $strapiData.content | markdownify }}
+</article>

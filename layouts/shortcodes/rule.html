@@ -1,0 +1,9 @@
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/s-rules" }}
+{{ $rules := getJSON $contentURL }}
+<div>
+    {{ range $rules.data }}
+    <p>
+    {{ .attributes.rule_text }}
+        <p/>
+    {{end}}
+</div>
