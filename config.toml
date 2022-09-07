@@ -1,0 +1,47 @@
+baseurl = "http://localhost:1313/"
+languageCode = 'en-us'
+defaultContentLanguage = 'en-us'
+endpoint = ""
+
+title = 'Docsssss'
+
+theme = 'ananke'
+
+[params]
+# Disabling search here because it falls out of the scope of this tutorial
+BookSearch = false
+# The Strapi server URL
+StrapiServerURL = 'http://localhost:1337'
+endpoint = ""
+
+[caches]
+[caches.getjson]
+# Sets the maximum age of cache to 10s before it is cleared.
+maxAge = "20s"
+
+[languages.en-us]
+languageName = "English (US)"
+contentDir = "content"
+
+
+[menu]
+  [[menu.main]]
+    identifier = "contacts"
+    name = "Контакты"
+    url = "/contacts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "rules"
+    name = "Правила"
+    url = "/rules/"
+    weight = 10
+[[menu.main]]
+identifier = "equipment"
+name = "Оборудование"
+url = "/equipment/"
+weight = 10
+[[menu.main]]
+identifier = "portfolio"
+name = "Портфолио"
+url = "/portfolio/"
+weight = 10
