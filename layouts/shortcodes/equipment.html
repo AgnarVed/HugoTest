@@ -1,5 +1,230 @@
 {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/equipments?populate=*" }}
 {{ $equipments := getJSON $contentURL }}
+{{ define "styles"}}
+    <script type="text/javascript" data-skip-moving="true">(function(w, d, n) {
+    var cl = "bx-core";
+    var ht = d.documentElement;
+    var htc = ht ? ht.className : undefined;
+    if (htc === undefined || htc.indexOf(cl) !== -1)
+    {
+        return;
+    }
+    var ua = n.userAgent;
+    if (/(iPad;)|(iPhone;)/i.test(ua))
+    {
+        cl += " bx-ios";
+    }
+    else if (/Android/i.test(ua))
+    {
+        cl += " bx-android";
+    }
+    cl += (/(ipad|iphone|android|mobile|touch)/i.test(ua) ? " bx-touch" : " bx-no-touch");
+    cl += w.devicePixelRatio && w.devicePixelRatio >= 2
+        ? " bx-retina"
+        : " bx-no-retina";
+    var ieVersion = -1;
+    if (/AppleWebKit/.test(ua))
+    {
+        cl += " bx-chrome";
+    }
+    else if ((ieVersion = getIeVersion()) > 0)
+    {
+        cl += " bx-ie bx-ie" + ieVersion;
+        if (ieVersion > 7 && ieVersion < 10 && !isDoctype())
+        {
+            cl += " bx-quirks";
+        }
+    }
+    else if (/Opera/.test(ua))
+    {
+        cl += " bx-opera";
+    }
+    else if (/Gecko/.test(ua))
+    {
+        cl += " bx-firefox";
+    }
+
+    if (/Macintosh/i.test(ua))
+    {
+        cl += " bx-mac";
+    }
+    ht.className = htc ? htc + " " + cl : cl;
+    function isDoctype()
+    {
+        if (d.compatMode)
+        {
+            return d.compatMode == "CSS1Compat";
+        }
+        return d.documentElement && d.documentElement.clientHeight;
+    }
+    function getIeVersion()
+    {
+        if (/Opera/i.test(ua) || /Webkit/i.test(ua) || /Firefox/i.test(ua) || /Chrome/i.test(ua))
+        {
+            return -1;
+        }
+        var rv = -1;
+        if (!!(w.MSStream) && !(w.ActiveXObject) && ("ActiveXObject" in w))
+        {
+            rv = 11;
+        }
+        else if (!!d.documentMode && d.documentMode >= 10)
+        {
+            rv = 10;
+        }
+        else if (!!d.documentMode && d.documentMode >= 9)
+        {
+            rv = 9;
+        }
+        else if (d.attachEvent && !/Opera/.test(ua))
+        {
+            rv = 8;
+        }
+        if (rv == -1 || rv == 8)
+        {
+            var re;
+            if (n.appName == "Microsoft Internet Explorer")
+            {
+                re = new RegExp("MSIE ([0-9]+[\.0-9]*)");
+                if (re.exec(ua) != null)
+                {
+                    rv = parseFloat(RegExp.$1);
+                }
+            }
+            else if (n.appName == "Netscape")
+            {
+                rv = 11;
+                re = new RegExp("Trident/.*rv:([0-9]+[\.0-9]*)");
+                if (re.exec(ua) != null)
+                {
+                    rv = parseFloat(RegExp.$1);
+                }
+            }
+        }
+        return rv;
+    }
+})(window, document, navigator);</script>
+    <link href="/bitrix/ui.font.opensans.css?16250359182599" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/main.popup.bundle.css?162503589926345" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/style.css?160619128225363" type="text/css"  rel="stylesheet" />
+{{end}}
+<div style="text-align: justify;">
+    <h1>Аренда оборудования для фото/видеосъемок </h1>
+    <br>
+</div>
+<p style="text-align: justify;">
+</p>
+<div style="text-align: justify;">
+    <i>Мечтаете о качественных фотоснимках и видео, но испытываете недостаток в профессиональной технике для съемки? Прокат фототехники и аренда студийного оборудования пространства «ФотоСова» решат вашу проблему! Смело осуществляйте свои творческие мечты!</i> &nbsp;
+</div>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    В наших залах имеется профессиональное оборудование, которое предоставляется бесплатно при аренде помещения. Также вы можете взять напрокат фотокамеры, объективы и прочие девайсы – за дополнительную сумму. При платной аренде фотооборудования для фотосъемки требуется предварительное согласование с администратором и 100%-ная предоплата с внесением залога.
+</p>
+<p style="text-align: justify;">
+</p>
+<h3 style="text-align: justify;"></h3>
+<p style="text-align: justify;">
+</p>
+<h3 style="text-align: justify;"><b><u>Что предоставляется бесплатно в наших залах</u></b></h3>
+<p style="text-align: justify;">
+</p>
+<h4 style="text-align: justify;"><b>&nbsp;</b><br>
+    <b>Profoto D2 AirTTL</b></h4>
+<p style="text-align: justify;">
+</p>
+<h3 style="text-align: justify;"></h3>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Наличие: Мистериум - х2
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Моноблок шведского производства с коротким световым импульсом (длительность t 0.5 сек.: обычный режим: 1/2,600с (500Дж) - 1/17,000с (1Дж); Freeze Mode: 1/2,600с (500Дж) - 1/63,000с (1Дж)). Прокат студийного света Profoto пользуется большим спросом, так как этот бренд производит надежное и простое в применении оборудование, которое подходит и фотографам-новичкам, и истинным профессионалам. &nbsp;&nbsp;Помимо высокой скорости импульса данная вспышка имеет и другие достоинства. Имеется поддержка AirTTL и высокоскоростная синхронизация (HSS). Пилотная лампа – 300Вт галоген (3200K). Цветовая температура: 5600K.
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<h4 style="text-align: justify;"><b>Air Remote TTL (Canon, Sony, Nikon)</b></h4>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Наличие: Мистериум - х3&nbsp;&nbsp;&nbsp;
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Съемочная техника в почасовую аренду на безвозмездной основе также включает два синхронизатора AirTTL, поддерживающих функцию High-Speed Sync (HSS). Данная характеристика позволяет использовать вспышку с выдержками до 1/8000&nbsp;с. Таким образом, этот синхронизатор помогает управлять моноблоками и получать четкие снимки при ярком солнце без размытия в движении со вспышкой и имеющимся световым студийным оборудованием для фотосъемки.
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<h4 style="text-align: justify;"><b>Журавль Avenger D600</b></h4>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Наличие: Мистериум - отсутствует
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Телескопическая стойка-перекладина для осветительных приборов. Имеет высоту от 117 до 212&nbsp;см. Оснащена качественным противовесом из стали. Журавль имеет крепление 5/8” (16&nbsp;мм) и крюк для дополнительного противовеса (max нагрузка – 7 кг). Это весьма устойчивая и надежная конструкция.
+</p>
+<p style="text-align: justify;">
+    <br>
+</p>
+<ul type="disc" style="text-align: justify;">
+    <li>Видеооборудование в аренду для видеосъемки мастер-классов и дополнительное фотооборудование бронируются только по индивидуальной договоренности с администратором.</li>
+    <li>Всё платное оборудование предоставляется только на условиях предварительного заказа со 100%-ной предоплатой.</li>
+</ul>
+<p>
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+</p>
+<p style="text-align: justify;">
+    Полный список имеющихся в наличии световых приборов, камер, штативов, рефлекторов и софт-боксов – по запросу. Узнайте о возможности их бронирования прямо сейчас!
+</p>
+<p style="text-align: justify;">
+    <br>
+    <i> </i>
+</p>
+<p style="text-align: justify;">
+    <i> </i>
+</p>
+<p style="text-align: justify;">
+    <i> </i>
+</p>
+<div style="text-align: justify;">
+    <i> </i><b><i>Прокат и аренда съемочного оборудования в Челябинске от «ФотоСова» – это всё, что вам нужно для потрясающих кадров!</i></b>
+</div>
+<div>
+    <b> </b>
+</div>
+<h3> </h3>	</div>
+<div class="more-text">Подробнее</div>
 {{ range $equipments.data }}
 <div>
     <p>{{ .attributes.name }}</p>
@@ -9,3 +234,15 @@
     <br/>
 </div>
 {{end}}
+
+{{ define "scripts"}}
+    <script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script><script type="text/javascript" src="/bitrix/js/main/core/core.js?1625035900564343"></script><script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_promise.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/loadext/loadext.js','/bitrix/js/main/loadext/extension.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/includes/js/includes.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/ui/polyfill/closest/js/closest.js','/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/core/core.js','/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','/bitrix/js/main/lazyload/dist/lazyload.bundle.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/parambag/dist/parambag.bundle.js']);
+    BX.setCSSList(['/bitrix/js/main/lazyload/dist/lazyload.bundle.css','/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'Y','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1662724814','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'ec1655cab6fe17cefa7db4a45c90b8e1'});</script>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LdXrPQZAAAAAPuY2t6S4HbpXbKISGwboWTQSLxP"></script>
+    <script type="text/javascript" src="/bitrix/js/main/popup/dist/main.popup.bundle.js?1625035899109107"></script>
+    <script type="text/javascript" src="/bitrix/components/bitrix/catalog.item/templates/.default/script.js?160619128263257"></script>
+    <script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "db8a867bd06dc425373ac6a1e7c7f62f"]); _ba.push(["host", "sova.photo"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+
+{{ end }}

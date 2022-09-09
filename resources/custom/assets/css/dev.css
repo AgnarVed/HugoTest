@@ -1,0 +1,8 @@
+.popup-radio-row {
+    display: flex;
+    justify-content: right;
+}
+
+.popup-radio-row > *:not(:last-of-type) {
+    margin-right: 20px;
+}

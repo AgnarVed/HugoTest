@@ -1,0 +1,19 @@
+{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
+{{ define "main" }}
+    <div class='p-404-cont'>
+        <div class='wrapper'>
+            <div class='p-404'>
+                <div class='p-404__number'><img src='/upload/404.svg'/></div>
+                <div class='p-404__text'>
+                    <div class='p-404__text-title'>Что-то пошло не так, страница больше не существует</div>
+                    <a class='p-404__text-link' href='/'>
+					<span class='p-404-links'>
+						<span class='p-404-links__home home-btn'></span>
+						<span class='p-404-links__text'>Пожалуйста, перейдите<br> на главную страницу сайта</span>
+					</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ .Title }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
+    <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" data-template-style="true" href="/styles.css?1662536043198827" >
+    <link rel="stylesheet" type="text/css" data-template-style="true" href="/dev.css?1612258033143" >
+    {{ block "styles" . }}{{end}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
+
+
+
+    <style>
+        .grecaptcha-badge {
+            display: none;
+        }
+        [v-cloak] {
+            display: none
+        }
+    </style>
+    <noscript><div><img src="https://mc.yandex.ru/watch/74006554" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</head>
+
+<body class="{{ .Page.Params.pageclass}}">
+
+{{ block "mobile-menu" .}}{{partialCached "site-mobile-menu.html" .}}{{end}}
+{{ block "head-fixed" . }}{{ partialCached "site-head-fixed.html" .}}{{end}}
+
+<div class="top-block">
+    {{ partial "site-main-header.html" .}}
+    <div class="top-block__banner">
+        <img src="/upload/banner-top.jpg"/>
+    </div>
+    <div class="top-block__menu">
+        <div class="wrapper">
+            <div class="top-block__menu-cont">
+                <ul class="main-nav">
+                    <li class="main-nav__item main-nav__item--hassubmenu">
+                        <a class="main-nav__link link--rent main-nav__item--hassubmenu " href="/rent/">
+                            Аренда		</a>
+                        <div class="submenu">
+                            <div class="submenu__list">
+                                <div class="submenu__item link--rent">
+                                    <a class="submenu__link" href="/rent/">Аренда</a>
+                                </div>
+                                <div class="submenu__item link--events">
+                                    <a class="submenu__link" href="/events/">Проведение мероприятий</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a class="main-nav__link link--pravila active" href="/rules/">Правила</a>
+                    </li>
+                    <li class="main-nav__item main-nav__item--hassubmenu">
+                        <a class="main-nav__link link--halls main-nav__item--hassubmenu" href="/halls/">Залы</a>
+                        <div class="submenu">
+                            <div class="submenu__list">
+                                <div class="submenu__item link--halls_zal-andes">
+                                    <a class="submenu__link" href="/halls/zal-andes/">Зал «Андес»</a>
+                                </div>
+                                <div class="submenu__item link--halls_zal-misterium">
+                                    <a class="submenu__link" href="/halls/zal-misterium/">Зал «Мистериум»</a>
+                                </div>
+                                <div class="submenu__item link--halls_zal-simple">
+                                    <a class="submenu__link" href="/halls/zal-simple/">Зал «Simple»</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a class="main-nav__link link--equipment" href="/equipment/">Оборудование</a>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a class="main-nav__link link--portfolio" href="/portfolio/">Портфолио</a>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a class="main-nav__link link--media" href="/media/">Медиа</a>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a class="main-nav__link link--contacts" href="/contacts/">Контакты</a>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a class="main-nav__link link--certificates" href="/certificates/">Сертификаты</a>
+                    </li>
+                </ul>
+                <a class="top-block__menu-btn" href="/rent/">Забронировать</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial "site-title-block.html" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+    {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+
+
+{{ block "scripts" .}}{{end}}
+{{ partial "site-scripts.html" . }}
+</body>
+</html>
+
+
