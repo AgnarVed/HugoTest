@@ -1,0 +1,186 @@
+<div class="arenda-cont">
+    <div class="arenda">
+        <div class="arenda__top-cont">
+            <div class="wrapper">
+                <div class="arenda__top">
+                    <div class="arenda__title">Световое оборудование</div>
+                </div>
+            </div>
+        </div>
+        <div class="arenda__list-cont">
+            <div class="wrapper">
+                <div class="arenda__list">
+                    {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/light-equipments?populate=*" }}
+                    {{ $equipments := getJSON $contentURL }}
+                    {{ range $equipments.data }}
+                    <div id="bx_3485106786_42" class="arenda__item">
+                        <div class="arenda-card">
+                            <a class="arenda-card__img" href="javascript:void(0);">
+                                {{ $url := printf "%s%s" "http://localhost:1337" .attributes.photo.data.attributes.url}}
+                                <img src="{{$url}}" loading="lazy"/>
+                            </a>
+                            <div class="arenda-card__info">
+                                <a class="arenda-card__title">{{ .attributes.name}}</a>
+                                <div class="arenda-card__text">
+                                    Доступно в зале
+                                    {{ if eq .attributes.andes true}} «Андес»{{end}}
+                                    {{ if eq .attributes.misterium true}}, «Мистериум»{{end}}
+                                </div>
+                                <div class="arenda-card__text">
+                                    <div class="ac-text" style="overflow:auto;">
+                                        {{ .attributes.description}}</div>
+                                    <div class="ac-more">Подробнее</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="arenda__top-cont">
+            <div class="wrapper">
+                <div class="arenda__top">
+                    <div class="arenda__title">Управление светом</div>
+                </div>
+            </div>
+        </div>
+        <div class="arenda__list-cont">
+            <div class="wrapper">
+                <div class="arenda__list">
+                    {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/light-controle-equipments?populate=*" }}
+                    {{ $equipments := getJSON $contentURL }}
+                    {{ range $equipments.data }}
+                    <div id="bx_3485106786_49" class="arenda__item">
+                        <div class="arenda-card">
+                            <a class="arenda-card__img" href="javascript:void(0);">
+                                {{ $url := printf "%s%s" "http://localhost:1337" .attributes.photo.data.attributes.url}}
+                                <img src="{{$url}}" loading="lazy"/>
+                            </a>
+                            <div class="arenda-card__info">
+                                <a class="arenda-card__title">{{ .attributes.name }}</a>
+                                <div class="arenda-card__text">Доступно в зале
+                                    {{ if eq .attributes.andes true}} «Андес»{{end}}
+                                    {{ if eq .attributes.misterium true}}, «Мистериум»{{end}}</div>
+                                <div class="arenda-card__text">
+                                    <div class="ac-text" style="overflow:auto;">
+                                        {{ .attributes.description}}</div>
+                                    <div class="ac-more">Подробнее</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="arenda__top-cont">
+            <div class="wrapper">
+                <div class="arenda__top">
+                    <div class="arenda__title">Стойки</div>
+                </div>
+            </div>
+        </div>
+        <div class="arenda__list-cont">
+            <div class="wrapper">
+                <div class="arenda__list">
+                    {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/stand-equipments?populate=*" }}
+                    {{ $equipments := getJSON $contentURL }}
+                    {{ range $equipments.data }}
+                    <div id="bx_3485106786_49" class="arenda__item">
+                        <div class="arenda-card">
+                            <a class="arenda-card__img" href="javascript:void(0);">
+                                {{ $url := printf "%s%s" "http://localhost:1337" .attributes.photo.data.attributes.url}}
+                                <img src="{{$url}}" loading="lazy"/>
+                            </a>
+                            <div class="arenda-card__info">
+                                <a class="arenda-card__title">{{ .attributes.name }}</a>
+                                <div class="arenda-card__text">Доступно в зале
+                                    {{ if eq .attributes.andes true}} «Андес»{{end}}
+                                    {{ if eq .attributes.misterium true}}, «Мистериум»{{end}}</div>
+                                <div class="arenda-card__text">
+                                    <div class="ac-text" style="overflow:auto;">
+                                        {{ .attributes.description}}</div>
+                                    <div class="ac-more">Подробнее</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="arenda__top-cont">
+            <div class="wrapper">
+                <div class="arenda__top">
+                    <div class="arenda__title">Синхронизаторы</div>
+                </div>
+            </div>
+        </div>
+        <div class="arenda__list-cont">
+            <div class="wrapper">
+                <div class="arenda__list">
+                    {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/synchronize-equipments?populate=*" }}
+                    {{ $equipments := getJSON $contentURL }}
+                    {{ range $equipments.data }}
+                    <div id="bx_3485106786_49" class="arenda__item">
+                        <div class="arenda-card">
+                            <a class="arenda-card__img" href="javascript:void(0);">
+                                {{ $url := printf "%s%s" "http://localhost:1337" .attributes.photo.data.attributes.url}}
+                                <img src="{{$url}}" loading="lazy"/>
+                            </a>
+                            <div class="arenda-card__info">
+                                <a class="arenda-card__title">{{ .attributes.name }}</a>
+                                <div class="arenda-card__text">Доступно в зале
+                                    {{ if eq .attributes.andes true}} «Андес»{{end}}
+                                    {{ if eq .attributes.misterium true}}, «Мистериум»{{end}}</div>
+                                <div class="arenda-card__text">
+                                    <div class="ac-text" style="overflow:auto;">
+                                        {{ .attributes.description}}</div>
+                                    <div class="ac-more">Подробнее</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="arenda__top-cont">
+            <div class="wrapper">
+                <div class="arenda__top">
+                    <div class="arenda__title">Разное</div>
+                </div>
+            </div>
+        </div>
+        <div class="arenda__list-cont">
+            <div class="wrapper">
+                <div class="arenda__list">
+                    {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/other-equipments?populate=*" }}
+                    {{ $equipments := getJSON $contentURL }}
+                    {{ range $equipments.data }}
+                    <div id="bx_3485106786_49" class="arenda__item">
+                        <div class="arenda-card">
+                            <a class="arenda-card__img" href="javascript:void(0);">
+                                {{ $url := printf "%s%s" "http://localhost:1337" .attributes.photo.data.attributes.url}}
+                                <img src="{{$url}}" loading="lazy"/>
+                            </a>
+                            <div class="arenda-card__info">
+                                <a class="arenda-card__title">{{ .attributes.name }}</a>
+                                <div class="arenda-card__text">Доступно в зале
+                                    {{ if eq .attributes.andes true}} «Андес»{{end}}
+                                    {{ if eq .attributes.misterium true}}, «Мистериум»{{end}}</div>
+                                <div class="arenda-card__text">
+                                    <div class="ac-text" style="overflow:auto;">
+                                        {{ .attributes.description}}</div>
+                                    <div class="ac-more">Подробнее</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

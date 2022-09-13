@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <link rel="stylesheet" type="text/css" data-template-style="true" href="/styles.css?1662536043198827" >
     <link rel="stylesheet" type="text/css" data-template-style="true" href="/dev.css?1612258033143" >
+
     {{ block "styles" . }}{{end}}
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
-
-
 
     <style>
         .grecaptcha-badge {
@@ -95,10 +95,18 @@
     </div>
 </div>
 
-{{ partial "site-title-block.html" . }}
 
-    {{ block "main" . }}
+{{ partial "site-title-block.html" . }}
+<main id="content">
+    {{ if eq .Title "Оборудование"}}
+    {{ partial "equipment/equipment-light.html" . }}
+    {{end}}
+    {{ if eq .Title "Правила"}}
+    {{ partial "rules/rules.html" .}}
     {{ end }}
+</main>
+
+
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
 
 
