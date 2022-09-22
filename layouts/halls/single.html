@@ -1,3 +1,143 @@
+{{ define "title-block" }}
+
+{{end}}
+
+
 {{define "main"}}
-<p>Hello </p>
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/price" }}
+{{ $prices := getJSON $contentURL }}
+
+{{ $newmap := dict "first" "first"}}
+{{ range $key, $elem := $prices.data.attributes }}
+{{ $newmap = merge $newmap (dict $key $elem) }}
+{{ end }}
+
+<div class="hall-cont">
+    <div class="wrapper">
+        <div class="hall">
+            <div class="hall-prices">
+                <div class="hp__list">
+                    <div class="hp__item">
+                        <div class="hp__item-label">Стоимость аренды</div>
+                        <div class="hp__item-text">от {{ index $newmap .Params.name}} руб.</div>
+                    </div>
+                    {{ if or (eq .Params.hall "andes") (eq .Params.hall "misterium")}}
+                    <div class="hp__item">
+                        <div class="hp__item-label">Стоимость аренды гримерки</div>
+                        <div class="hp__item-text">от 200 руб.</div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="gallery__title">Актуальное</div>
+                <div class="gallery__list">
+                    <a class="gallery__item" href="/portfolio/fashion/zhenskiy-portret/">
+                        <div class="gallery__item-img">
+                            <img src="/upload/resize_cache/iblock/bd0/515_436_2/xi487bo0qdiu0d8fb8qsxgspku41oj9a.jpg" alt="Женский портрет" />
+                            <div class="gallery__item-label">Женский портрет</div>
+                        </div>
+                        <div class="gallery__item-info">
+                            <div class="gallery__item-text"></div>
+                        </div>
+                    </a>
+                    <a class="gallery__item" href="/portfolio/interior/zal-andes/">
+                        <div class="gallery__item-img">
+                            <img src="/upload/resize_cache/iblock/7e4/515_436_2/g23npjad1hrnjd28mh8f19wp3fz9njtw.jpg" alt="Зал «Андес»" />
+                            <div class="gallery__item-label">Зал «Андес»</div>
+                        </div>
+                        <div class="gallery__item-info">
+                            <div class="gallery__item-text"></div>
+                        </div>
+                    </a>
+                    <a class="gallery__item" href="/portfolio/fashion/muzhskoy-portret/">
+                        <div class="gallery__item-img">
+                            <img src="/upload/resize_cache/iblock/da6/515_436_2/vrdflbajdh8m1c8wtlwmgacpoqvz5epl.jpg" alt="Мужской портрет" />
+                            <div class="gallery__item-label">Мужской портрет</div>
+                        </div>
+                        <div class="gallery__item-info">
+                            <div class="gallery__item-text"></div>
+                        </div>
+                    </a>
+                    <a class="gallery__item" href="/portfolio/family/love-story/">
+                        <div class="gallery__item-img">
+                            <img src="/upload/resize_cache/iblock/337/515_436_2/xtmb6lz2a3okzzsrfe9b5vynpyh2qxk0.jpg" alt="Love Story" />
+                            <div class="gallery__item-label">Love Story</div>
+                        </div>
+                        <div class="gallery__item-info">
+                            <div class="gallery__item-text"></div>
+                        </div>
+                    </a>
+                    <a class="gallery__item" href="/portfolio/fashion/zal-misterium3/">
+                        <div class="gallery__item-img">
+                            <img src="/upload/resize_cache/iblock/802/515_436_2/rycie9j74nnsw1peyd2qy7k5g031ltw5.jpg" alt="Фешн съемка" />
+                            <div class="gallery__item-label">Фешн съемка</div>
+                        </div>
+                        <div class="gallery__item-info">
+                            <div class="gallery__item-text"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="arenda__list-cont">
+        <div class="hall-heading-cont">
+            <div class="wrapper">
+                <div class="hall-heading">
+                    <div class="hall-heading__title">Техническое оснащение</div>
+                    <a class="more-link" href="/equipment/">Смотреть всё оборудование</a>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="arenda__list">
+                <div class="arenda__item">
+                    <div class="arenda-card">
+                        <a class="arenda-card__img" href="javascript:void(0);">
+                            <img src="/upload/iblock/847/8477281175bd4368418c75475e4b38f5.jpg" loading="lazy"/>
+                        </a>
+                        <div class="arenda-card__info">
+                            <a class="arenda-card__title" href="javascript:void(0);">Profoto D2 1000 AirTTL</a>
+                            <div class="arenda-card__text">Доступно в зале Зал «Андес»</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arenda__item">
+                    <div class="arenda-card">
+                        <a class="arenda-card__img" href="javascript:void(0);">
+                            <img src="/upload/iblock/b06/b06a78c7cc4b2d92632dc6a93991f883.jpg" loading="lazy"/>
+                        </a>
+                        <div class="arenda-card__info">
+                            <a class="arenda-card__title" href="javascript:void(0);">Kupo 330M Senior roller stand</a>
+                            <div class="arenda-card__text">Доступно в зале Зал «Андес»</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arenda__item">
+                    <div class="arenda-card">
+                        <a class="arenda-card__img" href="javascript:void(0);">
+                            <img src="/upload/iblock/8d1/8d16d1a1ce0226947d1c7a212af89fe2.jpg" loading="lazy"/>
+                        </a>
+                        <div class="arenda-card__info">
+                            <a class="arenda-card__title" href="javascript:void(0);">Штатив Manfrotto 055XPRO3</a>
+                            <div class="arenda-card__text">Доступно в зале Зал «Андес»</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arenda__item">
+                    <div class="arenda-card">
+                        <a class="arenda-card__img" href="javascript:void(0);">
+                            <img src="/upload/iblock/f4c/f4c86b8604be598b2e5d4d98de2ffbc8.jpg" loading="lazy"/>
+                        </a>
+                        <div class="arenda-card__info">
+                            <a class="arenda-card__title" href="javascript:void(0);">Софтбокс Profoto RFi 30х180 см</a>
+                            <div class="arenda-card__text">Доступно в зале Зал «Андес»</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {{end}}

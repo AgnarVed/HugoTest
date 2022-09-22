@@ -1,3 +1,13 @@
+{{ with resources.GetRemote "http://localhost:1337/api/halls?populate=*" }}
+{{ $halls := unmarshal .Content }}
+{{ range $halls.data }}
+    {{ $string := jsonify . }}
+    {{ $filename := printf "halls/%s.md" (urlize .attributes.name) }}
+    {{ $resource := resources.FromString $filename $string }}
+    {{ $file := $resource.RelPermalink }}
+{{ end }}
+{{ end }}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,7 +18,7 @@
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="Интерьерная фотостудия ФотоСова – это 2 уникальных зала с большими окнами, оригинальными декорациями, профессиональным оборудованием Profoto, гармоничной атмосферой и приятной музыкой." />
-    <link rel="stylesheet" type="text/css" data-template-style="true" href="/styles.css?1662536043198827" >
+    <link rel="stylesheet" type="text/css" data-template-style="true" href="/main.css?1662536043198827" >
     <link rel="stylesheet" type="text/css" data-template-style="true" href="/dev.css?1612258033143" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>

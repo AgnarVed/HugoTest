@@ -1,0 +1,31 @@
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/contact/" }}
+{{ $contacts := getJSON $contentURL }}
+
+<div class="contacts-cont">
+	<div class="wrapper">
+		<div class="contacts">
+			<address class="contacts-address">
+				<div class="ca__label">Адрес</div>
+				<div class="ca__text">{{ $contacts.data.attributes.City}}<br>{{ $contacts.data.attributes.Address}}</div>
+				<div class="ca__label">Контактные данные</div>
+				<div class="ca__text">
+					<a onclick="ym(74006554,'reachGoal','phone-contacts')" href="tel:{{ $contacts.data.attributes.phone_to_call}}">{{ $contacts.data.attributes.phone}}</a>
+					<br><br>
+					<a onclick="ym(74006554,'reachGoal','email-contacts')" href="/cdn-cgi/l/email-protection#c6afa8a0a986b5a9b0a7e8b6aea9b2a9">
+						<span class="__cf_email__" data-cfemail="9bf2f5fdf4dbe8f4edfab5ebf3f4eff4">[email&#160;protected]</span>
+					</a>
+				</div>
+				<ul class="socials">
+                    <li id="bx_3485106786_14" class="socials__item">
+						<a class="socials__link" onclick="ym(74006554,'reachGoal','vk-contacts');" href="https://vk.com/sova.photo_chel" target="_blank" >
+							<img class="socials__ico" src="/upload/vk_dark.svg" alt="Вконтакте" />
+							<span>Вконтакте</span>
+						</a>
+					</li>
+				</ul>
+				<a class="btn btn--border fancybox" onclick="ym(74006554,'reachGoal','feedback-contacts')" data-fancybox href="#feedback-popup" >задать вопрос</a>
+			</address>
+			<div id="contacts-map" class="contacts-map" style="width: 100%; height: 450px"></div>
+		</div>
+	</div>
+</div>

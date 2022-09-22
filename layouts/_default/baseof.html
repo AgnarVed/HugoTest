@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <link rel="stylesheet" type="text/css" data-template-style="true" href="/styles.css?1662536043198827" >
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" data-template-style="true" href="/main.css?1662536043198827" >
     <link rel="stylesheet" type="text/css" data-template-style="true" href="/dev.css?1612258033143" >
 
     {{ block "styles" . }}{{end}}
@@ -104,6 +104,16 @@
     {{ if eq .Title "Правила"}}
     {{ partial "rules/rules.html" .}}
     {{ end }}
+    {{ if eq .Title "Контакты"}}
+    {{ partial "contacts/contacts.html" .}}
+    {{ end }}
+    {{ if eq .Title "Сертификаты"}}
+    {{ partial "certificates/certificates.html" .}}
+    {{ end }}
+    {{ if eq .Title "Залы"}}
+    {{ partial "halls/halls.html" .}}
+    {{ end }}
+    {{ block "main" .}}{{ end }}
 </main>
 
 

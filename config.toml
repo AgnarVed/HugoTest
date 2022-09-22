@@ -7,6 +7,11 @@ title = 'Docsssss'
 
 theme = 'ananke'
 
+disableKinds = [ "sitemap", "taxonomy", "term" ]
+
+[outputs]
+home = [ "html" ]
+
 [params]
 # Disabling search here because it falls out of the scope of this tutorial
 BookSearch = false
@@ -23,6 +28,13 @@ maxAge = "20s"
 languageName = "English (US)"
 contentDir = "content"
 
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "prebuild/public/halls"
+target = "content/halls"
 
 [menu]
   [[menu.main]]

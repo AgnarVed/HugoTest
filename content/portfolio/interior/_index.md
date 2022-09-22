@@ -1,4 +1,6 @@
 ---
 title: "Интерьер"
-endpoint: "/api/portfolio/interior/loc1/"
+endpoint: "/api/halls/andes"
+pageclass: "inner page-portfolio-interior loading"
+type: "portfolio/interior"
 ---

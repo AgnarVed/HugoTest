@@ -1,0 +1,174 @@
+<div class="wrapper">
+<section class="certificates">
+    <div class="certificates__block top">
+        <div class="certificates__block-left">
+            <p>
+                <b>Дарите впечатления и эмоции</b><br>
+                <br>
+                Подарочный сертификат на фотосессию — возможность порадовать близких и друзей. Сертификат станет оригинальным подарком на любой праздник или просто приятным сюрпризом без повода.&nbsp; В&nbsp; залах фотостудии вы сможете запечатлеть важные моменты, а наши штатные стилисты помогут с подготовкой образа.
+            </p>
+            <p>Сертификат действует&nbsp;2 года с даты покупки и является невозвратным
+                <br>
+            </p>
+            <a class="btn btn--bg fancybox" href="#buy"> Купить сертификат</a>
+        </div>
+        <div class="certificates__block-mid"></div>
+        <div class="certificates__block-right">
+            <img src="/upload/cert.png" >
+            <img src="/upload/certificate.png">
+        </div>
+    </div>
+    <div class="certificates__block mid">
+        <div class="certificates__block-left">
+            <h5>ПОРТФОЛИО работ, сделанных <br/>в нашей фотостудии</h5>
+            <div class="text-block">
+                <p>В зале множество локаций&nbsp;и целых 2 этажа для для съемок: от портретных фото до LoveStory, концептуальных, семейных, творческих и коммерческих <br>
+                    <br>
+                </p>
+                <img src="/upload/cert/left1.png" alt="">
+            </div>
+            <img src="/upload/cert/left2.png" alt=""/>
+        </div>
+        <div class="certificates__block-mid">
+            <img src="/upload/cert/mid.png" alt=""/>
+        </div>
+        <div class="certificates__block-right">
+            <img src="/upload/cert/right1.png" alt=""/>
+            <div class="text-block">
+            <h5>Примеры фото, сделанных гостями нашей студии</h5>
+            <p>&nbsp;ФотоСова&nbsp;– это атмосферное пространство для реализации ваших идей <br>
+                <br>
+            </p>
+            <img src="/upload/cert/right2.png" alt="">
+        </div>
+        </div>
+    </div>
+    <div class="certificates__block bot">
+        <div class="certificates__block-left">
+            <h5>ИНТЕРЬЕРНАЯ ФОТОСТУДИЯ «ФОТОСОВА»</h5>
+        </div>
+        <div class="certificates__block-mid">
+            <div class="certificates__block-text">
+                <p>
+                    Аренда залов фотостудии для сьемки и проведения мастер-классов «Фотосова» – это атмосферное творческое пространство с дизайнерскими локациями для проведения фотосессий и мастер-классов.</p>
+                <p>В нашей фотостудии вас ждёт самая стильная съемка, самый успешный воркшоп или мастер-класс – ведь для этого у нас есть все условия!
+                </p>
+                <p>
+                    В центре города работает новая светлая фотостудия с двумя просторными залами, разнообразными и оригинальными фотозонами, мобильными фонами, профессиональным оборудованием и огромными окнами с живописным видом.</p>
+                <p>Если вы хотите снять зал для фотосъемок в почасовую
+                </p>                    </div>
+            <div class="expand-button">Подробнее</div>
+        </div>
+    </div>
+</section>
+</div>
+<div class="popup certificate-buy" id="buy">
+    <div class="popup__title">Покупка сертификата</div>
+    <div class="popup__cont">
+        <form action="#" id="buyCertificate" name="buyCertificate" onsubmit="return toPayment()">
+            <input name="recaptcha_token" type="hidden">
+            <div class="certificate-buy__inputs">
+                <div class="form__inputs-input">
+                    <div class="default-input">
+                        <input name="name" class="default-input__input" type="text" placeholder="Имя*" required="required"/>
+                        <div class="default-input__error">
+                            <div class="error-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__inputs-input">
+                    <div class="default-input">
+                        <input name="phone" class="default-input__input" type="tel" placeholder="Телефон*" required="required"/>
+                        <div class="default-input__error">
+                            <div class="error-text"><!-- текст ошибки --></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__inputs-input">
+                    <div class="default-input">
+                        <input name="email" class="default-input__input" type="email" placeholder="e-mail*" required="required"/>
+                        <div class="default-input__error">
+                            <div class="error-text"><!-- текст ошибки --></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="certificate-buy__type">
+                <div class="certificate-buy__type-title">Тип сертификата</div>
+                <label class="certificate-buy__type-input"
+                       data-id="1"
+                       data-price="2000"
+                       data-name="Аренда зала 1 час"
+                       onchange="changeCertInfo(this)">
+                    <span>Аренда зала 1 час</span>
+                    <input type="radio" value="1" name="cert_type"/>
+                    <div>
+                        <img src="/upload/uf/c48/c63cdkaikcmlh3ie31x3fwcdyoa05vay.png" alt=""/>
+                    </div>
+                </label>
+                <label class="certificate-buy__type-input"
+                       data-id="2"
+                       data-price="4000"
+                       data-name="Аренда зала 2 часа"
+                       onchange="changeCertInfo(this)">
+                    <span>Аренда зала 2 часа</span>
+                    <input type="radio" value="2" name="cert_type"/>
+                    <div>
+                        <img src="/upload/uf/2d1/se5r03edewml18mcx57schbdvlqu7b9q.png" alt=""/>
+                    </div>
+                </label>
+                <label class="certificate-buy__type-input"
+                       data-id="3"
+                       data-price="6000"
+                       data-name="Аренда зала 3 часа"
+                       onchange="changeCertInfo(this)">
+                    <span>Аренда зала 3 часа</span>
+                    <input type="radio" value="3" name="cert_type"/>
+                    <div>
+                        <img src="/upload/uf/f8b/ktzl1yb1w8pkzx4j9btlohuk4dlcijqy.png" alt=""/>
+                    </div>
+                </label>
+                <label class="certificate-buy__type-input"
+                       data-id="4"
+                       data-price="8000"
+                       data-name="Аренда зала 4 часа"
+                       onchange="changeCertInfo(this)">
+                    <span>Аренда зала 4 часа</span>
+                    <input type="radio" value="4" name="cert_type"/>
+                    <div>
+                        <img src="/upload/uf/1f6/quei06wwxar7q7frvfv2dr2wbswgkq28.png" alt=""/>
+                    </div>
+                </label>
+            </div>
+            <div id="certificate-buy" class="certificate-buy__total" style="display: none">
+                <p>Итого:</p>
+                <ul class="certificate-buy__total-list">
+                    <li><span id="type-name"></span><span id="type-price"></span></li>
+                </ul>
+                <p id="total-price"></p>
+            </div>
+            <div class="certificate-buy__notion">
+                <p> Обратите внимание<br>
+                    Сертификат действует 2 года с даты покупки и является невозвратным</p>
+            </div>
+            <button style="display: none" class="btn btn--bg" onclick="return checkForm('buyCertificate')"  type="submit">Перейти к оплате</button>
+            <div class="form__submit-text">
+                <div class="checkbox required">
+                    <input required="required" name="chk_politics" value="1" type="checkbox" checked="checked" id="chk_politics">
+                    <label for="chk_politics">Отправляя заявку я даю согласие на обработку своих  персональных данных в соответствии с
+                        <a target="_blank" href="/upload/iblock/811/811355f32659fd72858d03b193c81098.pdf"> политикой конфиденциальности</a>
+                    </label>
+                </div>
+                <div class="checkbox required">
+                    <input required="required" name="chk_oferta" value="1" type="checkbox" checked="checked" id="chk_oferta">
+                    <label for="chk_oferta">Оплачивая услуги я соглашаюсь с условиями
+                        <a target="_blank" href="/upload/iblock/c65/c6591e62d548fd6ec88cba5e5ba410c6.pdf">Оферты</a>
+                        и <a target="_blank" href="/pravila/">Правилами</a> фотостудии
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</main>

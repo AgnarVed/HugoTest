@@ -1,3 +1,35 @@
 {{ define "main"}}
-<p> goodbuy</p>
+
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/halls?populate=*" }}
+{{ $halls := getJSON $contentURL }}
+
+<div class="halls-cont">
+    <div class="wrapper">
+        <div class="halls">
+            <div class="halls__list">
+                {{ range $halls.data}}
+                <a id="bx_3485106786_3" class="halls__item" href="/halls/zal-andes/" >
+                    <div class="halls__item-img">
+                        {{ $url := printf "%s%s" "http://localhost:1337" .attributes.cover_photo.data.attributes.url}}
+                        <img src="{{$url}}" alt="Зал {{.name_ru}}" />
+                    </div>
+                    <div class="halls__item-bot">
+                        <div class="halls__item-info">
+                            <div class="halls__item-title">Зал {{ .attributes.name_ru}}</div>
+                            <div class="halls__item-text">{{ .attributes.description}}</div>
+                            <div class="price">
+                                <div class="price__label">Стоимость аренды</div>
+                                <div class="price__price">от&nbsp;{{.attributes.price}} руб./&nbsp;час</div>
+                            </div>
+                        </div>
+                        <div class="halls__item-btn">
+                            <div class="btn btn--border">Подробнее</div>
+                        </div>
+                    </div>
+                </a>
+                {{ end}}
+            </div>
+        </div>
+    </div>
+</div>
 {{ end }}
