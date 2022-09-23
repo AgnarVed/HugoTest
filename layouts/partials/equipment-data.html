@@ -1,0 +1,3 @@
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/equipments?populate=*" }}
+{{ $equipments := getJSON $contentURL }}
+{{ return $equipments }}

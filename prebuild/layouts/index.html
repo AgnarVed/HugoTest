@@ -1,0 +1,9 @@
+{{ with resources.GetRemote "http://localhost:1337/api/halls?populate=*" }}
+{{ $halls := unmarshal .Content }}
+{{ range $halls.data }}
+{{ $string := jsonify .attributes }}
+{{ $filename := printf "halls/%s.md" (urlize .attributes.name) }}
+{{ $resource := resources.FromString $filename $string }}
+{{ $file := $resource.RelPermalink }}
+{{ end }}
+{{ end }}

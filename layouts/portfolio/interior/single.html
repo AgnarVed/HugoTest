@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/photos?populate=*" }}
+{{ $photos := getJSON $contentURL }}
+
+
+<div class='portfolio-cont'>
+    <div class='wrapper'>
+        <div class='portfolio'>
+            <div class='portfolio__list'>
+                {{ range $elem := $photos.data }}
+                {{ if eq .Title $elem.attributes.name_en }}
+                <a class='media__item fancybox' data-fancybox="gallery" href='/upload/resize_cache/iblock/7e4/1920_1280_1d5d420c5db77f3908694df935fcc475a/g23npjad1hrnjd28mh8f19wp3fz9njtw.jpg'>
+                    <div class='media__item-img'>
+                        <img src='/upload/resize_cache/iblock/7e4/660_660_2d5d420c5db77f3908694df935fcc475a/g23npjad1hrnjd28mh8f19wp3fz9njtw.jpg' alt='Портфолио 0'>
+                    </div>
+
+                </a>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/photo-collections?populate=*" }}
+{{ $halls := getJSON $contentURL }}
+{{ $strapi := .Site.Params.StrapiServerURL }}
+<div class='portfolio-cont'>
+    <div class='wrapper'>
+        <div class='portfolio'>
+            <div class='portfolio__list'>
+                {{ range $halls.data }}
+                <a class="portfolio__item" href="/portfolio/{{.attributes.name_en}}/" id="bx_1847241719_0">
+                    {{ $link := printf "%s%s" $strapi .attributes.cover_photo.data.attributes.url }}
+                    <div class="portfolio__item-img"><img src="{{ $link }}" alt="{{.attributes.name}}"/>
+                        <div class="portfolio__item-label">{{ .attributes.name }}</div>
+                    </div>
+                    <div class="portfolio__item-info">
+                        <div class="portfolio__item-title">{{ .attributes.description }}</div>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+

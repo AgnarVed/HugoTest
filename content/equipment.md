@@ -1,8 +1,6 @@
 ---
 title: "Оборудование"
 endpoint: "/api/equipments"
-featured_image: "/images/rules-banner-top.jpg"
+pageclass: "inner page-equipment loading"
+equipment: true
 ---
-{{<equipment>}}
-
-<br/>

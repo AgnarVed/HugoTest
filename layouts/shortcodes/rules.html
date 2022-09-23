@@ -1,6 +1,6 @@
 {{ $contentURL := printf "%s%s" .Site.Params.StrapiServerURL "/api/rule" }}
 {{ $rules := getJSON $contentURL }}
-<div>
+<div class="wrapper">
     {{ range $rules}}
     <p>
         {{ .attributes.rules | markdownify }}
